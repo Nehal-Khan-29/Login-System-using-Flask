@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", serif;
+    text-decoration: none;
+    outline: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    background-color: black;
+    background-image: url('../img/car2.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box{
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    gap: 30px;
+    border-radius: 10px;
+    background-color: rgba(146, 146, 146, 0.5);
+    backdrop-filter: blur(7px);
+}
+
+form {
+    width: 100%;
+}
+
+h2{
+    color: white;
+}
+
+.logout_wrap{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: right;
+    gap: 20px;
+}
+
+input{
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+input:hover{
+    background-color: rgb(173, 173, 173);
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.acc_del{
+    background-color: red;
+    color: white;
+}
+
+.acc_del:hover{
+    background-color: rgb(123, 0, 0);
+}

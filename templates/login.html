@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <title>Login</title>
+</head>
+
+<body>
+
+    <form action="{{url_for('login')}}" method="POST">
+
+        <div class="login_box">
+
+            <h2>Login</h2>
+            
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div id="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            
+            <div class="forgot_wrap">
+                <a href="{{url_for('verification')}}">Forgot password?</a>
+            </div>
+            
+            <input class="submit" type="submit" value="Login">
+            
+            <div class="login_new_reg">
+                <b>Don't have an account?</b>
+                <a href="{{url_for('register')}}">Register</a>
+            </div>
+
+        </div>
+
+    </form>
+    
+     <script src="{{ url_for('static', filename='js/flash.js') }}"></script>
+</body>
+</html>
