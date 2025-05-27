@@ -12,7 +12,7 @@ import string
 
 # Pre Setup ======================================================================================================
 
-mydb=con.connect(host='localhost',user='root',password='nehal292004!')
+mydb=con.connect(host='localhost',user='root',password='<your-password>')
 mycur = mydb.cursor()
 
 query = "show databases"
@@ -24,7 +24,7 @@ if "flask_login" not in existing_database:
     mycur.close()
     mydb.close()
 
-mydb=con.connect(host='localhost',user='root',password='nehal292004!', db = "flask_login")
+mydb=con.connect(host='localhost',user='root',password='<your-password>', db = "flask_login")
 mycur = mydb.cursor()
 query = "show tables"
 mycur.execute(query)
@@ -46,8 +46,9 @@ app.permanent_session_lifetime = timedelta(minutes=15)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'trialandthrow@gmail.com'
-app.config['MAIL_PASSWORD'] = 'gbho jqdl yepg srkz'
+app.config['MAIL_USERNAME'] = '<your-email>'
+app.config['MAIL_PASSWORD'] = '<your-app-
+password>'
 mail = Mail(app)
 
 bcrypt = Bcrypt(app)
